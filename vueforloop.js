@@ -1,5 +1,5 @@
 var app4 = new Vue({
-    el: '#app-4',
+    el: '#app',
     data: {
       todos: [
         { text: 'Learn JavaScript' },
