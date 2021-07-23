@@ -8,3 +8,4 @@ var app4 = new Vue({
       ]
     }
   })
+  console.log("vue js");
