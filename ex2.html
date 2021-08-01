@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="test">
+        <!-- <div  v-html="message">
+
+        </div> -->
+        <!-- <div  v-html="message1">
+
+            <img v-bind:src = "imgsrc" width = "300" height = "250" />
+        </div> -->
+
+        <div  v-html="message1">
+<h1>{{ message1}}</h1>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+
+        // let vueInstance=new Vue({
+        //     el:"#test",
+        //     data:{
+        //         message:'<h1>This is a heading</h1><p>This is a pragraph</p>'
+        //     }
+        // })
+
+        //Table
+
+
+        // let vueInstance = new Vue({
+        //     el: "#test",
+        //     data: {
+
+        //         message: '<table border="1"><tr><th>Fruit</th></tr><tr><td>Apple</td></tr><tr><th>Color</th><td>Red</td><td>orange </td><td>Ornage</td><br></tr>'
+        //     }
+        // })
+
+        //displaying Image
+        // let vueInstance = new Vue({
+        //     el: "#test",
+        //     data: {
+
+        //         message: "<img src=roses.jpg width=200px height=200px>" 
+        //     }
+        // })
+
+        //Displaying Radio Button
+
+        // let vueInstance1 = new Vue({
+        //     el: "#test",
+        //     data: {
+
+               
+        //         message1: "<input type=radio  name=gender value=abc><label>Male</label><input type=radio name=gender value=abc><label>Female</label>" 
+        //        , imgsrc : "roses.jpg"
+        //     }
+
+        // })
+
+
+        let vueInstance1 = new Vue({
+            el: "#test",
+            data: {
+                message1: typeof  1234 
+               , imgsrc : "roses.jpg"
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<body>
+    
+    <!-- <div id="test"> -->
+<!-- <h1>{{books}}</h1>
+<h1>{{hello}}</h1> -->
+<!-- <h1>{{firstName}}</h1>
+<h1>{{lastName}}</h1> -->
+    <!-- </div> -->
+    <div id="life">
+        <p v-html="a"></p>
+        </div>
+    <script>
+// new Vue({
+// el:"#test",
+// data:{
+//       books:"JS",
+//       hello: 'welcome to Vue JS'
+// },
+// beforeCreate() {
+// //alert('beforCreate hook has been called');
+//  console.log('beforCreate hook has been called');
+// },
+// created() {
+
+//  //alert('Created hook has been called');
+//  console.log(`books is of type ${typeof this.books}`);
+//  }
+//  ,
+//  beforeMount() {
+//    // alert('beforeMount is called')
+//     console.log('beforeMount is called');
+//   }
+//   ,
+// beforeUpdate()
+//     {
+//     alert('beforeUpdate hook has been called');
+//     },
+// mounted() {
+    
+// console.log('mounted has been called');
+// alert('mounted has been called'); 
+// this.hello= 'lalalalallalalalalaalal';
+// }
+// , beforeDestroy() {
+//     this.books = null
+//     delete this.books;
+//     //console.log("deleted");
+
+//   },
+//   destoryed()
+//   {
+//     this.$destroy() 
+//     console.log(this)
+//   }
+ 
+// })
+new Vue({
+
+    el:"#test",
+    data:{
+        firstName:"John",
+        lastName:"Doe"
+    },
+        beforeCreate()
+         {
+         console.log("Vue Instance Is Created");
+         }
+          ,
+         created()
+         {
+        console.log("Data computed Watcher objects are initialized");
+        },
+        beforeMount()
+        {
+        console.log("Data computed Watcher objects compiled not updated in the dom");
+        },
+        mounted(){
+         console.log("Dom is updated");
+        },
+        beforeupdate()
+        {
+            console.log("before update method");
+        },
+       mounted(){
+         this.firstName="123434";
+        },
+        updated()
+        {
+       console.log("DOM is Updated");
+        },
+        beforeDestory()
+        {
+            this.firstName = null
+            delete this.firstName
+        }
+         ,
+        destoryed()
+        {
+        this.$destroy() 
+        console.log(this)
+        }
+})
+
+var vm = new Vue({
+  el:'#life',
+  data(){
+    return {
+      a: '<b style="color: red">test</b>',
+      b:'sweet'
+    }
+  },
+  beforeCreate(){
+    console.log('I m beforeCreate');
+  },
+  created(){
+    console.log('I m Created')
+  },
+  beforeMount(){
+    console.log('i m before mount');
+  },
+  mounted(){
+    console.log('i m mounted');
+    setTimeout(() => {
+      this.a = 102
+      // window.location.href('www.google.com')
+    }, 5000)
+  },
+  beforeUpdate(){
+    console.log('I m Before Update');
+  },
+  updated(){
+    console.log('i m updated');
+  },
+  beforeDestroy(){
+    alert('dom destroyed')
+    console.log('i m before destroy');
+  },
+  destroyed(){
+    console.log('I m  destroyed');
+  }
+})
+
+    </script>
+</body>
+</html>

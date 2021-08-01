@@ -7,9 +7,62 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="test">
+        <h1 v-if="seen">50 is greater </h1>
+        <h1 v-if="seen">false Statement </h1>
+    </div>
+    <div id="forLoop">
+        <ol>
+            <li v-for="i in fruits">
+                {{i.text}}
+            </li>
+            
+        </ol>
+    </div>
+    <div id="app-6">
+        <p>{{ message }}</p>
+        <input v-model="message">
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script>
-        console.log("hellow world");
-        console.log("1234555");
+        let vue= new Vue({
+            el:"#test",
+            data:{
+                seen:true
+            }
+        })
+        let a=-50;
+        if(a>10){
+           vue.seen=true; 
+        }
+        else
+        {
+            vue.seen=false;  
+        }
+        //for in Loop in Vue Js
+        let vue1=new Vue({
+            el:"#forLoop",
+            data:{
+                fruits:[{
+                    text:"apple"
+                },
+                {
+                    text:"Orange"
+                },
+                {
+                    text:"banana"
+                }]
+            }
+        })
+
+        //handling user input
+                var app6 = new Vue({
+                    el: '#app-6',
+                   data: {
+                message: 'Hello Vue!'
+                }
+          })
+
 
     </script>
 </body>

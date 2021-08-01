@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .active {
+       background: red;
+    }
+    .textColor{
+        color: orange;
+    }
+    .display{
+        background-color: brown;
+    }
+    .textfont
+    {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .arrayClass{
+        background-color: darkblue;
+    }
+    
+ </style>
+<body>
+    <div id = "classbinding">
+        <div v-bind:class = "{active:isactive}"><b>{{title}}</b></div>
+          <h1 v-bind:style="{color:'orange'}">Style binding</h1>
+        <!-- <div v-bind:class = "menu"><b>{{title}}</b></div> -->
+        <!-- <div v-bind:style = "color"><b>{{title}}</b></div>-->
+
+        <!--Directly  assinged Property Value-->
+         <!--class Binding with Object-->
+
+        <h1 v-bind:class="{display:true,textColor:true}">Class binding with object</h1>
+
+         <!-- with property-->
+         <!--class Binding with Object-->
+        <h1 v-bind:class="{display:show,textColor:txtColor,textfont:txtFont}">Class binding with object</h1>
+
+          <!--class Binding with Array-->
+          <h1 v-bind:class="[arrayClass:arrClass]">class Binding with Array</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+   <script>
+  var vm = new Vue({
+            el: '#classbinding',
+            data: {
+               title : "CLASS BINDING",
+               isactive : true,
+               show:true,
+               txtColor:true,
+               txtFont:true,
+               arrClass:true
+            //   menu : "menuColors",
+            //   color:"red"
+            }
+         });
+   </script> 
+</body>
+</html>

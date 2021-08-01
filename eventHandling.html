@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- <div id="test">
+<button v-on:click="counter+=1">Increase</button>
+<p>{{counter}}</p>
+    </div> -->
+
+    <!-- <div id="test"> -->
+    <!-- <button v-on:click="greet">Click</button> -->
+    <!-- <p>{{counter}}</p>
+             -->
+    <!-- </div> -->
+
+    <!-- <div id="example-3">
+  <button v-on:click="say('Hii')">say haiii</button>
+  
+  <button v-on:click="say('hello')">say hello</button>
+    </div> -->
+
+    <!-- <div id="test">
+
+        <button v-on:click="count+=1">Increment</button>
+
+<p>{{count}}</p>
+    </div>
+    <div id="test1">
+        <button v-on:click="greeting">greeting</button>
+    </div> -->
+    <div id="test">
+        <button v-on:click="count+=1">Increase</button>
+        <p>{{count}}</p>
+
+    </div>
+    <div id="test1">
+        <P>Using Method</P>
+        <button v-on:click="increment">Increase</button>
+        <p>{{count1}}</p>
+    </div>
+    <div id="test3">
+
+        <button v-on:click="greeting('Hii')">Say Haiii</button>
+        <button v-on:click="greeting('Hello')">Say Hello</button>
+    </div>
+
+    <div id="test3">
+        <a href="https://www.w3schools.com" v-on:click.prevent>message</a>
+    </div>
+
+    <div id="test4">
+        <button v-on:click="sum(2,2)">Sum </button>
+        <p>{{sum1}}</p>
+    </div>
+
+    <div id="test5">
+        <button v-on:click="sum"> Sum</button>
+        <p>{{total}}</p>
+    </div>
+
+    <div id="test6">
+        <input type="text" v-on:focus="focusElement" v-on:blur="focusOut" v-on:input="onInput">
+        <p>{{text}}</p>
+    </div>
+
+    <div id="test7">
+
+        <h1 v-on:mouseover="mouseOver" v-on:mouseout="mouseOut" v-on:mouseleave="mouseLeave">{{text}}</h1>
+    </div>
+
+    <div id="test8">
+        <!-- 
+        <div style="width: 2000px;height: 1000px;background-color: brown;" v-on:click="backgroundcolorChange"
+            v-on:click=" randomColor"></div> -->
+        <button v-on:click="backgroundcolorChange">Background Color Change</button>
+    </div>
+
+    <div id = "databinding">  
+        <div v-bind:style = "styleobj" v-on:mouseover = "changebgcolor" v-on:mouseout = "originalcolor"></div>  
+     </div>
+    <script>
+
+        // new Vue({
+        //     el: '#test',
+        //     data: {
+        //     counter:0
+        //     }
+        // })
+        //   var vueInstance=  new Vue({
+        //         el: '#test',
+        //         data: {
+        //         text:"Hello Vue JS"
+        //         },
+        //         methods:{
+        //          greet: function(event){
+        //             alert(this.text)
+        //             alert(event.target.tagName)
+        //         }  
+        //         }
+        //     }
+        // )
+
+        // new Vue({
+        //     el: '#example-3',
+        //     methods: {
+        //         say: function (message) {
+        //             alert(message)
+        //         }
+        //     }
+        // })
+
+        //Using Attributes
+        // new Vue({
+        //     el:"#test",
+        //     data:{
+        //         count:0
+        //     }
+        // })
+        //Using Methods...
+
+        // new Vue({
+
+        //     el:"#test1",
+        //     data:{
+        //         message:"Hellow Vue Js"
+        //     },
+        //     methods:{
+        //         greeting: function()
+        //         {
+        //         alert(this.message)
+        //     }
+        //     }
+        // })
+
+        // new Vue({
+        //     el:"#test",
+        //     data:{
+        //         count:0
+        //     }
+        // })
+
+        // //UJsing Methods
+        // new Vue({
+        //     el:"#test1",
+        //     data:{
+        //         count1:0
+        //     },
+        //    methods:{
+        //        increment:function()
+        //        {
+        //           this.count1+=1;
+        //        }
+        //    }
+        // })
+        //passing Arguments...
+
+        // new Vue({
+        //     el:"#test3",
+        //     methods:{
+        //         greeting:function(message)
+        //         {
+        //                 alert(message)
+        //         }     
+        //     }
+        // })
+
+        // // Event Modifiers:
+        // new Vue({
+        //     el:"#test3",
+        //     data:{
+        // message:"W3 schools"
+        //     }
+
+        // })
+
+        new Vue({
+            el: "#test4",
+            data: {
+                sum1: 0
+            },
+            methods: {
+                sum: function (num1, num2) {
+                    alert(num1 + num2)
+                    console.log(num1 + num2);
+                    this.sum1 = num1 + num2;
+
+                }
+            }
+
+        })
+        new Vue({
+            el: "#test5",
+            data: {
+                num1: 50,
+                num2: 20,
+                total: 0
+            },
+            methods: {
+
+                sum: function () {
+                    return this.total = this.num1 + this.num2;
+                }
+
+            }
+        })
+
+        //Onfocus and .
+        new Vue({
+            el: "#test6",
+            data: {
+                text: ""
+            },
+            methods: {
+
+                focusElement: function (e) {
+                    return e.target.style.backgroundColor = 'red'
+                },
+                focusOut: function (e) {
+                    return e.target.style.backgroundColor = 'green'
+                }
+                ,
+                onInput: function (e) {
+                    return this.text = e.target.value;
+                }
+
+            }
+        })
+
+        //Mouse Events....
+
+        new Vue({
+            el: "#test7",
+            data: {
+                text: "Hellow World"
+            },
+            methods: {
+
+                mouseOver: function (e) {
+                    return e.target.style.backgroundColor = 'red';
+                },
+                mouseOut: function (e) {
+                    return e.target.style.color = 'green';
+                }
+                ,
+                mouseLeave: function (e) {
+                    e.target.style.backgroundColor = 'white';
+                }
+            }
+        })
+
+        //BackGround Color changing.... backgroundcolorChange..
+        //  new Vue({
+        //     el: "#test8",
+        //      methods: {
+        //         randomColor:function(number)
+        //           {
+        //             return Math.floor(Math.random()*number)
+        //           },
+        //          backgroundcolorChange: function()
+        //         {
+        //              let color='rgb('+ randomColor(255)+','+randomColor(255)+','+randomColor(255)+')'
+        //              return e.target.style.backgroundColor = color;
+        //         },
+        //     }
+        // })
+
+        new Vue({
+
+            el: "#test8",
+            data:{
+            message:"Hii"
+                },
+            methods: {
+                backgroundcolorChange: function () {
+                    let color = 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ','
+                        + Math.floor(Math.random() * 255) + ')'
+                    document.body.style.background = color;
+                }
+            }
+        })
+
+
+        new Vue({
+            el: '#databinding',
+            data: {
+                num1: 100,
+                num2: 200,
+                total: '',
+                styleobj: {
+                    width: "100px",
+                    height: "100px",
+                    backgroundColor: "red"
+                }
+            },
+            methods: {
+                changebgcolor: function () {
+                    this.styleobj.backgroundColor = "blue";
+                },
+                originalcolor: function () {
+                    this.styleobj.backgroundColor = "brown";
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="app">
+<h1>{{greeting("Evening")}}</h1>
+<a v-bind:href="website">Click the Link</a>
+    </div> -->
+
+    <div id = "component_test">
+        <testcomponent></testcomponent>
+     </div>
+     <div id = "component_test1">
+        <testcomponent></testcomponent>
+     </div>
+     
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+   
+   <script>
+var vue=new Vue({
+       el:"#app",
+        data:{
+        firstName:"123",
+        lastName:"d",
+        website:"https://www.w3schools.com/"
+        },
+        methods:{
+            greeting:function(greet)
+            {
+                    return `Good ${greet} ${this.firstName}`
+            }
+        }
+})
+   </script> 
+</body>
+</html>
