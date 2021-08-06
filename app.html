@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <section id="test">
+      
+      <h2>My Course Goal</h2>
+      <p>{{  number1 }}</p>
+      <p>{{  number2 }}</p>
+      <h1>{{randomNumber1()}}</h1>
+      <h2>{{number+1}}</h2>
+      <h3>{{number>10? "Largest":"smallest"}}</h3>
+      <h4>{{Math.random()}}</h4>
+
+      <h1 v-html="rawHtml()"></h1>
+      <h1 v-html="rawHtml1()"></h1>  
+      <p v-text="message1"></p>
+      <p v-pre>{{data}}</p>
+      <!--v-show used to toggle css display property-->
+      <p>show used to toggle css display property</p>
+      <p v-show="showExample">css display property</p>
+      <!--v-if v-else-->
+      <h1 v-if="a > 10">a is greater than ten</h1>
+      <h1 v-else>a is not greater than ten</h1>
+       
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="test.js"></script>
+  </body>
+</html> 

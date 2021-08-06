@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;500&display=swap" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-logo">
+      <span class="site-title">INVOICE</span>
+    </div>
+    <div class="header-search">
+      <button class="button-menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385 385">
+          <path d="M12 120.3h361a12 12 0 000-24H12a12 12 0 000 24zM373 180.5H12a12 12 0 000 24h361a12 12 0 000-24zM373 264.7H132.2a12 12 0 000 24H373a12 12 0 000-24z" />
+        </svg></button>
+    </div>
+  </div>
+  <div class="main">
+    <div class="sidebar">
+      <ul>
+        <li><a href="index.html" class="active"><i class="lni lni-home"></i><span>Dashboard</span></a></li>
+        <li><a href="viewproductdetails.html"><i class="lni lni-text-format"></i><span>View Product Details</span></a></li>
+      </ul>
+    </div>
+    <div class="page-content">
+      <!-- <button  class="button" @click.prevent="save()">Back</button> -->
+      <div class="container">
+        <div id="productDetails">
+      
+        <form>
+            <h1 class="h1">ADD PRODUCT</h1>
+            <div class="form-group">
+                <label><b>Product Name</b></label>
+                <input type="text" class="form-control" v-model="saveProducts.productName">
+                <small id="error-msg1" class="error"></small>
+            </div>
+
+            <div class="form-group">
+                <label><b>Rate:</b></label>
+                <input type="text" class="form-control" v-model="saveProducts.rate">
+                <small id="error-msg2" class="error"></small>
+            </div>
+
+            <div class="form-group">
+                <label><b> Avalible Quantitiy:</b></label>
+                <input type="text" class="form-control" v-model="saveProducts.avalibleQuantity">
+                <small id="error-msg3" class="error"></small>
+            </div>
+            <br>
+            <button  class="button" @click.prevent="save">Save</button>
+        </form>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+<script src=navbar.js></script>
+<script src=addProduct.js></script>
+</body>
+</html>

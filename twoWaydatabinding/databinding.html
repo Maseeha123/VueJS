@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <body>
+    <div id="test">
+      <input type="text" v-model="message" />
+      <button v-on:click="reset">Reset</button>
+      <p>{{message}}</p>
+      <br />
+
+      <p>{{"FirstName"+firstName +" "+lastName+" " +age}}</p>
+      <p>{{`First Name ${firstName} lastName ${lastName} Age${age}`}}</p>
+
+      <!-- <p>{{details()}}</p> -->
+      
+      <button v-on:click="add(10)">Add</button>
+      <button v-on:click="sub(5)">Subtract</button>
+      <p>{{counter}}</p>
+
+      <p>{{details1}}</p>
+
+      <p>{{details2}}</p>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#test",
+        data: {
+            std: {},
+          message: "",
+          firstName: "Maseeha",
+          lastName: "K",
+          age: 23,
+          counter: 0,
+          message1:"This is a computed property"
+        },
+        methods: {
+          reset: function (e) {
+            return (this.message = e.target.value = "");
+          },
+
+          //Methods Used for data Binding...
+
+        //   details: function () {
+        //     console.log("Running Again");
+        //     return `First name${this.firstName}Last name${this.lastName}Age${this.age}`;
+        //   },
+
+          add: function (number) {
+            return (this.counter += number);
+          },
+
+          sub: function (number) {
+            return (this.counter -= number);
+          },
+        },
+        computed: {
+
+          details1: function () {
+            console.log(" Inside Computed Property");
+            return `First name${this.firstName}Last name${this.lastName}Age${this.age}`;
+          },
+          details2:function()
+          {
+             return this.message1;
+          }
+
+        },
+        watch: {
+            message: function(oldValue,newValue) {
+                console.log(oldValue,newValue)
+            }
+        }
+
+      });
+    </script>
+  </body>
+</html>

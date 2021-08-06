@@ -1,0 +1,180 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test">
+        <input type="text" v-model="name">
+
+      <p>{{ name}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#test",
+        data: {
+          name: "",
+        
+          fullname: "",
+        },
+        watch: {
+          name: function (newValue,oldValue) {
+            console.log(newValue);
+            this.fullname = oldValue + "K";
+          },
+        //   lastname:function(newValue)
+        //   {
+        //       console.log(newValue);
+        //       this.fullname = newValue + "K";
+        //  }
+        },
+      });
+    </script>
+  </body>
+</html> -->
+
+<html>
+  <head>
+    <title>Vue.js Watchers</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+      .demo {
+        background-color: pink;
+        width: 200px;
+        height: 200px;
+        border-style: dashed;
+      }
+      .active1 {
+        background-color: coral;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="test">
+      <input type="text" v-model="number" />
+      <p>{{sum}}</p>
+
+      <input type="text" v-model="number1" />
+
+      <button v-on:click="counter">Increment</button>
+      <p>{{count}}</p>
+
+      <p class="Color">Paragraph 1</p>
+
+      <p class="Color">Paragraph 2</p>
+
+      <p class="Color">Paragraph 3</p>
+
+      <p class="Color">Paragraph 4</p>
+
+      <button @click="changeColor('orange')">Orange</button>
+
+      <button @click="changeColor('green')">Green</button>
+
+      <!-- <div class="demo"  v-bind:style="{borderColor: boxASelected?'red':'blue'}" @click="borderColor('A')"></div>
+      <br />
+      <div class="demo"  v-bind:style="{borderColor: boxBSelected?'yellow':'green'}" @click="borderColor('B')"></div>
+      <br />
+      <div class="demo"  v-bind:style="{borderColor: boxCSelected?'red':'cyan'}" @click="borderColor('C')" @click="borderColor('C')"></div> -->
+
+      <br />
+      <!-- <div v-bind:class="boxASelected ? 'demo active1' : 'demo' "  @click="borderColor('A')"></div> -->
+
+      <!--Same As the above -->
+      <!-- <div v-bind:class="{demo:true, active1:boxASelected}"  @click="borderColor('A')"></div> -->
+
+
+      <!--Using Computed Properties-->
+      <!-- <div class="demo" v-bind:class="boxAClasses"   @click="borderColor('A')" ></div> -->
+
+      <!-- Using Array -->
+      <div class="demo" v-bind:class="['demo',{active1:boxASelected}]"   @click="borderColor('A')" ></div>
+      <br />
+
+      <div
+        v-bind:class="boxBSelected ? 'demo active1' : 'demo' "   @click="borderColor('B')"></div>
+      <br />
+      <div
+        v-bind:class="boxCSelected ? ' demo active1' : 'demo' "  @click="borderColor('C')" ></div>
+      <br />
+    </div>
+    <br />
+    <script>
+      var vm = new Vue({
+        el: "#test",
+        data: {
+          number: "",
+          sum: 0,
+          number1: "",
+          count: 0,
+          a: 10,
+          boxASelected: false,
+          boxBSelected: false,
+          boxCSelected: false,
+        },
+
+        watch: {
+          number: function (value) {
+            this.sum = parseInt(value) + 1;
+          },
+          number1: function (value) {
+            if (value == 10) alert("10 reached");
+          },
+          count: function (value) {
+            if (value == 12) {
+              alert("Reaches 12");
+            }
+          },
+        },
+
+
+        methods: {
+          counter: function () {
+            this.count += 1;
+          },
+          changeColor: function (color) {
+            console.log(color);
+            console.log("inside a function");
+            var element = document.getElementsByClassName("Color");
+            console.log(element);
+            for (var i = 0; i < element.length; i++) {
+              document.getElementsByClassName("Color")[
+                i
+              ].style.backgroundColor = color;
+            }
+          },
+
+
+          borderColor: function (box) {
+            switch (box) {
+              case "A":
+                // this.boxASelected = true;
+                this.boxASelected = !this.boxASelected;
+                break;
+
+              case "B":
+                // this.boxBSelected = true;
+                this.boxBSelected = !this.boxBSelected;
+                break;
+
+              case "C":
+                // this.boxCSelected = true;
+                this.boxCSelected = !this.boxCSelected;
+                break;
+            }
+          },
+        },
+        //Using computed Properties...
+        computed: {
+          boxAClasses() {
+            return { active1: this.boxASelected};
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

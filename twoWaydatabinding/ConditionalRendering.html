@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="test">
+        <input type="text" v-model="inputData">
+        <button @click="Save">Save</button>
+        <p v-if="goals.length==0">This is a Paragraph</p>
+        <!--If the Previous Condition is fail-->
+
+        <!-- <p v-else-if="goals.length!==0">Elements are Presents in the array</p> -->
+        <!-- <ul v-else>
+            <li v-for="(items,index) in goals">
+                    {{items}}-{{index}}
+            </li>
+                </ul> -->
+            <table v-else border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Index</th>
+                    <th>Actions</th>
+                </tr>
+                <tbody>
+                    <tr  v-for="(items,index) in goals"><td>{{items}}</td><td>{{index}}</td><td><button>UPDATE</button><button>DELETE</button></td></tr>
+                </tbody>
+            </table>
+                <!-- <li v-for="(items,index) in goals">
+                        {{items}}-{{index}}
+                </li>
+         -->
+        <!-- <ul v-for="items1 in list1">
+            <li>{{items1}}</li>
+        </ul> -->
+
+        <ul>
+            <li  v-for="(value,key,index) in  {name:'Maseeha',Age:23,lastname:'Tasneem'}">{{key}}-{{value}}-{{index}}</li>
+        </ul>
+        <!--Loop numbers-->
+        <ul>
+            <li v-for="num in 10">{{num}}</li>
+        </ul>
+        <p>{{list2()}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        new Vue({
+                el:"#test",
+                data:{
+                    goals:[],
+                    inputData:"",
+                    list:[{text:"apple"},{text:"orange"},{text:"graphs"}],
+                    list1:["apple","Orange","graphs","Banana","Gova"],
+                    list2:function()
+                    {
+                        console.log("Hello world");
+                    },
+                    
+                    list3:[{text:"apple",color:"red",},{text:"orange"},{text:"graphs"}],
+                },
+                methods:{
+                    Save:function()
+                    {
+                       return this.goals.push(this.inputData)
+                    }
+                }
+        })
+    </script>
+</body>
+
+</html>

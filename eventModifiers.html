@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test">
+      <!--Prevent Modifier-->
+      <form v-on:submit.prevent="submitForm">
+        <input type="text" />
+        <!--Input Modifiers-->
+
+        <!-- Lazy Modifier-->
+
+        <input type="text" v-model.lazy="message1" />
+        <!-- Number Modifier-->
+
+        <input type="number" v-model.number.lazy="message" />
+
+        <!-- trim Modifier-->
+        <input type="text" v-model.number.trim="trim" placeholder="Trim" />
+        <input type="submit" value="Sign UP" />
+        <br/>
+      </form>
+      <!--Event  Modifier Once-->
+      <button v-on:click.once="count+=10">Count</button>
+      <br /><br />
+
+      <a href="https://www.google.com" v-on:click.prevent>Google</a>
+      <br /><br />
+
+      <p>{{count}}</p>
+      <p>{{message}}</p>
+      <p>{{message1}}</p>
+      <p>{{trim}}</p>
+      <br />
+      <!-- Stop Modifier-->
+      <div id="parent-div" @click="submitClick">
+        <button id="child-div" @click.stop="submitClick">Click</button>
+      </div>
+
+      <!--Capture Modifier-->
+      <div @click.capture="captureModifier">
+        <button @click="btnClick">Click Me Again</button>
+      </div>
+      <br /><br />
+      <!--Selft - ".self ": Only when the current element is clicked will
+             the event handler function be triggered.-->
+
+      <div class="inner" @click.self="divHandler">
+
+        <input type="button" value="Poke him" @click.stop="btnHandler" />
+      </div>
+
+      <!--Keyboard Modifiers-->
+      <input type="text" v-on:keydown.enter=" keyboardevents" />
+      <p>{{keyboard}}</p>
+
+      <input type="text" v-on:keydown.shift="shiftKey" />
+      <p>{{shiftKey1}}</p>
+
+      <input type="text" v-on:keydown.keyCode="metaKey" />
+      <p>{{metaKey1}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="eventModifiers.js"></script>
+  </body>
+</html>

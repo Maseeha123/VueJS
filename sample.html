@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="example-1">
+    <table border="1">
+        <tr>
+            <th>productName</th>
+            <th>Rate</th>
+            <th>Avalible Quantitiy</th>
+            <th>Actions</th>
+        </tr>
+        <tbody>
+            <tr v-for="(i,index) in   product">
+                <td>{{i.productName}}</td>
+                <td>{{i.rate}}</td>
+                <td>{{i.avalibleQuantity}}</td>
+                <td><button>UPDATE</button><button>DELETE</button></td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <input type="text" class="form-control" v-model="appendProducts.productName">
+</div>
+    <script>
+        new Vue({
+            el: '#example-1',
+            data: {
+                product: [{ "productName": "HJKH", "rate": "JKH", "avalibleQuantity": "KJH" },
+                       { "productName": "BMNB", "rate": "NBMN", "avalibleQuantity": "NMBMN" },
+                        { "productName": "DHSA", "rate": "WWQ", "avalibleQuantity": "JHGJH" },
+                        
+                           { "productName": "jklj", "rate": "kljlk", "avalibleQuantity": "lkj" },
+                           { "productName": "nmmn,m", "rate": "nm,n,m", "avalibleQuantity": "nm,n" },
+                            { "productName": "fff", "rate": "ddd", "avalibleQuantity": "sssss" },
+                            { "productName": "1234", "rate": "ddas", "avalibleQuantity": "dsaddsa" },
+                               { "productName": "nmm,n", "rate": "hkjh", "avalibleQuantity": "jkh" },
+                                { "productName": "jklj", "rate": "jlkjl", "avalibleQuantity": "lkj" },
+                           { "productName": "jkhjk", "rate": "kjhjk", "avalibleQuantity": "jhkh" }],
+
+             appendProducts:{ productName: "apple", rate: "orange", avalibleQuantity: "grapg"}
+            }
+
+        })
+        
+
+    </script>
+</body>
+
+</html>
