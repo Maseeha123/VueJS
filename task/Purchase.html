@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<body style="height: 5000px;  overflow-x: hidden;">
+    <div class="container">
+        <div class="header">
+            <div class="header-logo">
+                <span class="site-title">INVOICE</span>
+            </div>
+            <div class="header-search">
+                <button class="button-menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385 385">
+                        <path
+                            d="M12 120.3h361a12 12 0 000-24H12a12 12 0 000 24zM373 180.5H12a12 12 0 000 24h361a12 12 0 000-24zM373 264.7H132.2a12 12 0 000 24H373a12 12 0 000-24z" />
+                    </svg></button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#" class="active"><i class="lni lni-home"></i><span>Dashboard</span></a></li>
+                    <li><a href="viewproductdetails.html"><i class="lni lni-text-format"></i><span>View Product
+                                Details</span></a></li>
+                </ul>
+            </div>
+            <div class="page-content">
+                <h1 v-bind:class="{heading:true}">INVOICE</h1>
+                <br>
+
+                <div style="width: 160px;height: 600px;" v-bind:style="{width:200px,height:600px backgroundColor:red}">
+                    <div id="productDetails">
+
+                        <!-- <button @click="calling()">add</button> -->
+                        <!-- <table>
+                        <tr v-for="(item, index) in tabledata" :key="index">
+                           <td>name</td> <td><input type="text"></td>
+                           <td>name</td> <td><input type="text"></td>
+                        </tr>
+                    </table> -->
+
+                        <form>
+                            <div class="form-group">
+                                <label><b>Product:</b></label>
+
+                                <select v-model="selectedProduct" @change="displayRate()">
+                                    <option disabled value="" selected>SELECT</option>
+                                    <option v-for="i in   productList">
+                                        {{i.productName}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div >
+                                <label><b>Quantity</b></label>
+                                <input type="number" @blur="compareQuantity()" @input="totalAmount()"
+                                    v-model="saveProducts.avalibleQuantity">
+                            </div>
+                            <div class="form-group">
+                                <label><b>Rate</b></label>
+                                <input type="text" v-model="saveProducts.rate">
+                            </div>
+                            <div class="form-group">
+                                <label><b>Amount</b></label>
+                                <input type="number" v-model=" amount">
+                            </div>
+                    </div>
+                    </form>
+                </div>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src=navbar.js></script>
+    <script src=addProduct.js></script>
+
+</body>
+
+</html>

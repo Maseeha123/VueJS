@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div style="width: 2000px;background-color:#303f9e;height: 60px;">
+    </div>
+    <!-- <button class="button" onclick="location.href = 'addProducts.html';" v-bind:style="{margin-left:'400px'}">Add
+        Product</button> -->
+    <br>
+    <h4 style="margin-left: 20px;">PURCHASE PRODUCT</h4>
+    <div id="productDetails">
+        <table style="margin-left: 20px;">
+            <tr v-for="(item, index) in tabledata" :key="index">
+                <td><label><b>PRODUCT</b></label></td>
+                <td><select v-model="selectedProduct" @change="displayRate()">
+                        <option disabled value="" selected>SELECT</option>
+                        <option v-for="i in   productList">
+                            {{i.productName}}
+                        </option>
+                    </select></td>
+                <br>
+                
+                <td><label><b>QUANTITY</b></label></td>
+                <td><input type="number" @input="totalAmount()" v-model="saveProducts.avalibleQuantity"></td>
+
+                <td><label><b>RATE:</b></label></td>
+                <td><input type="text" v-model="saveProducts.rate"></td>
+
+                <td><b>AMOUNT</b></td>
+                <td><input type="number" v-model=" amount"></td>
+            </tr>
+        </table>
+        <button @click="calling()" v-bind:class="{btnClass:true}">ADD PRODUCT</button>
+        <br>
+        <table id="table" v-if="tableShow" style="width: 1000px;margin-left: 20px;">
+            <thead>
+                <th>PRODUCT</th>
+                <th>QUANTITY</th>
+                <th>RATE</th>
+                <th>AMOUNT</th>
+            </thead>
+            <tbody>
+                <tr v-for="(i,index) in   productArray">
+                    <td>{{i.productName}}</td>
+                    <td>{{i.quantity}}</td>
+                    <td>{{i.rate}}</td>
+                    <td>{{i.amount}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><b>TOTAL</b></td>
+                    <td><i class="fa fa-inr">&nbsp;{{total}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <script src=addProduct.js></script>
+
+</body>
+
+</html>

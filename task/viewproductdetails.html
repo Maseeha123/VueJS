@@ -65,7 +65,7 @@
                          </form>
                          </div>
 
-                       <table  id="table" style="width: 1200px;padding: 20px;margin-top: 30px;">
+                       <table  id="table" style="width: 1200px;padding: 20px;margin-top: 30px;" v-if="showTable">
                             <tr>
                                 <th>Product Name</th>
                                 <th>Rate</th>
@@ -80,10 +80,8 @@
                                     <td><button  style="border: none;" ><i class="fa fa-pencil" @click="EditRow(i,index)"  style="color:rgb(20, 2, 2);font-size: 13px;" ></i></button>&nbsp;&nbsp;<button  @click="deleteRow(index)" style="border: none;"><i class="fa fa-trash" style="color:rgb(20, 2, 2);font-size: 13px;"></i></button></td>
                                 </tr>
                             </tbody>
-                       </table>
-                       
-                    
-                </div>
+                        </table>  
+                    </div>
             </div>
         </div>
     </div>

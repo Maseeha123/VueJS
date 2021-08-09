@@ -197,6 +197,7 @@
     border: none;
     border-bottom: 1px solid #ddd;
      color: #555; 
+     outline: none;
      }
      form{
        max-width: 420px;
@@ -250,3 +251,21 @@
 .display{
   display: block;
 }
+.heading{
+
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
+  background-color:#303f9f;
+
+}
+
+select{
+  display: block;
+  padding: 10px 6px;
+  width: 500%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ddd;
+   color: #555; 
+   outline: none;
+   }

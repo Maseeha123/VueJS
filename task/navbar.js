@@ -21,5 +21,10 @@ pageContent.addEventListener("click", function () {
 window.addEventListener("resize", function () {
     if (window.innerWidth > responsiveBreakpoint) {
         container.classList.remove("nav-closed");
+        enableScrolling()
     }
 });
+function enableScrolling(){
+    window.onscroll=function(){};
+}
+enableScrolling()

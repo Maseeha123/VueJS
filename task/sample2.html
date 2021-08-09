@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="productDetails">
+        <table id="table">
+            <thead>
+                <th>PRODUCT</th>
+                <th>QUANTITY</th>
+                <th>RATE</th>
+                <th>AMOUNT</th>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in tabledata">
+                    
+                    <td> <select v-model="selectedProduct">
+                            <option disabled value="" selected>SELECT</option>
+                            <option v-for="i in productList">
+                                {{i.productName}}
+                            </option>
+                        </select></td>
+                    <td><input type="number"  @input="totalAmount()"
+                            v-model="saveProducts.avalibleQuantity"></td>
+                    </td>
+                    <td><input type="text" v-model="saveProducts.rate"></td>
+                    <td><input type="number" v-model=" amount"></td>
+                </tr>
+                <!-- <tr v-for="(item, index) in tabledata">
+
+                    <td> <select v-model="selectedProduct">
+                        <option disabled value="" selected>SELECT</option>
+                        <option v-for="i in productList">
+                            {{i.productName}}
+                        </option>
+                    </select></td>
+
+                    <td><input type="number" ></td>
+                </td>
+                <td><input type="text"></td>
+                <td><input type="number"></td>
+
+                </tr> -->
+
+            </tbody>
+        </table>
+        <button @click="calling()">Add New Line</button>
+        <p>{{ tabledata}}</p>
+    </div>
+    <script src=addProduct.js></script>
+    <script>
+        
+    </script>
+</body>
+    <script>
+        
+    </script>
+</body>
+</html>
